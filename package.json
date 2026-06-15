@@ -1,0 +1,13 @@
+{
+  "name": "taskflow-cicd",
+  "version": "1.0.0",
+  "description": "TaskFlow – DevOps Assignment 4 web app",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}

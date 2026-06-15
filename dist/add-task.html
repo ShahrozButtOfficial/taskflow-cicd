@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow – Add Task</title>
+  <link rel="stylesheet" href="/taskflow-cicd.1303bb05.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-brand">Task<span>Flow</span></a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Dashboard</a></li>
+        <li><a href="/add-task.html" class="active">Add Task</a></li>
+        <li><a href="/task-list.html">Task List</a></li>
+        <li><a href="/task-detail.html">Task Detail</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="wrapper">
+      <div>
+        <h1>Add New Task</h1>
+        <p>Fill in the form below to create a new task.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrapper">
+      <div class="card" style="max-width: 680px">
+
+        <!-- Task Title -->
+        <div class="form-group">
+          <label class="form-label" for="task-title">Task Title <span style="color: var(--danger)">*</span></label>
+          <input type="text" id="task-title" class="form-input" placeholder="e.g. Set up CI/CD pipeline" required="">
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label class="form-label" for="task-desc">Description</label>
+          <textarea id="task-desc" class="form-textarea" placeholder="Describe what needs to be done..."></textarea>
+        </div>
+
+        <!-- Due Date + Priority -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="due-date">Due Date <span style="color: var(--danger)">*</span></label>
+            <input type="date" id="due-date" class="form-input" required="">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="priority">Priority <span style="color: var(--danger)">*</span></label>
+            <select id="priority" class="form-select" required="">
+              <option value="" disabled="" selected="">Select priority</option>
+              <option value="high">🔴 High</option>
+              <option value="medium">🟡 Medium</option>
+              <option value="low">🟢 Low</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Assigned To -->
+        <div class="form-group">
+          <label class="form-label" for="assigned">Assigned To</label>
+          <input type="text" id="assigned" class="form-input" placeholder="Team member name (optional)">
+        </div>
+
+        <!-- Actions -->
+        <div style="gap: 12px; margin-top: 8px; display: flex">
+          <button class="btn btn-primary" onclick="handleSubmit()">Save Task</button>
+          <a href="/task-list.html" class="btn btn-outline">Cancel</a>
+        </div>
+
+        <!-- Success message (hidden by default) -->
+        <div id="success-msg" style="border: 1px solid var(--success); color: var(--success); background: #22c55e1f; border-radius: 8px; margin-top: 20px; padding: 14px 18px; font-size: .88rem; font-weight: 600; display: none">
+          ✅ Task saved successfully! <a href="/task-list.html" style="color: var(--success); margin-left: 8px">View all tasks →</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrapper">TaskFlow © 2025 – DevOps Fundamentals, Spring 2026</div>
+  </footer>
+
+  <script>function handleSubmit() {
+    const title = document.getElementById('task-title').value.trim();
+    const date = document.getElementById('due-date').value;
+    const prio = document.getElementById('priority').value;
+    if (!title || !date || !prio) {
+        alert('Please fill in all required fields (Title, Due Date, Priority).');
+        return;
+    }
+    // Show success feedback
+    document.getElementById('success-msg').style.display = 'block';
+    // Clear form
+    document.getElementById('task-title').value = '';
+    document.getElementById('task-desc').value = '';
+    document.getElementById('due-date').value = '';
+    document.getElementById('priority').value = '';
+    document.getElementById('assigned').value = '';
+}
+// Set date input min to today
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('due-date').setAttribute('min', today);
+
+</script>
+
+
+<script src="/add-task.12e5562e.js"></script></body></html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow – About &amp; Help</title>
+  <link rel="stylesheet" href="/taskflow-cicd.1303bb05.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-brand">Task<span>Flow</span></a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Dashboard</a></li>
+        <li><a href="/add-task.html">Add Task</a></li>
+        <li><a href="/task-list.html">Task List</a></li>
+        <li><a href="/task-detail.html">Task Detail</a></li>
+        <li><a href="/about.html" class="active">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="wrapper">
+      <div>
+        <h1>About TaskFlow</h1>
+        <p>Purpose, features, and a usage guide for the application.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrapper">
+      <div style="grid-template-columns: 2fr 1fr; gap: 24px; display: grid">
+
+        <!-- Left: Main Content -->
+        <div>
+
+          <!-- What is TaskFlow -->
+          <div class="card">
+            <div class="about-section">
+              <h2>What is TaskFlow?</h2>
+              <p>
+                TaskFlow is a lightweight, browser-based task management application built as part of
+                the DevOps Fundamentals course (Spring 2026) at the University of Central Punjab.
+                It provides a simple and clean interface to create, view, filter, and manage tasks
+                without the complexity of a full backend or database.
+              </p>
+              <p style="margin-top: 12px">
+                The application is containerized using Docker and deployed automatically to
+                <strong style="color: var(--text)">Render</strong> via a GitHub Actions CI/CD pipeline,
+                demonstrating a complete end-to-end DevOps workflow.
+              </p>
+            </div>
+
+            <div class="about-section">
+              <h2>Key Features</h2>
+              <ul>
+                <li>📊 Dashboard with task summary counts (total, pending, completed)</li>
+                <li>➕ Add new tasks with title, description, due date, and priority</li>
+                <li>📋 Task list with live filter buttons (All / Pending / Completed / Priority)</li>
+                <li>🔍 Task detail view with options to mark complete or delete</li>
+                <li>ℹ️ About page with usage guide (you are here!)</li>
+                <li>📱 Fully responsive design for mobile and desktop</li>
+              </ul>
+            </div>
+
+            <div class="about-section">
+              <h2>How to Use TaskFlow</h2>
+              <ol class="step-list">
+                <li>
+                  <div>
+                    <strong style="color: var(--text)">Open the Dashboard</strong>
+                    <p>Start at the Dashboard (index.html) to see a summary of all your tasks and quick navigation links.</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong style="color: var(--text)">Add a Task</strong>
+                    <p>Click "Add Task" in the navigation or the "+ New Task" button. Fill in the title, description, due date, and priority, then click Save.</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong style="color: var(--text)">Browse All Tasks</strong>
+                    <p>Go to "Task List" to see every task in a table. Use the filter buttons at the top to narrow down by status or priority level.</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong style="color: var(--text)">View Task Details</strong>
+                    <p>Click "View" on any task row to open its detail page. Here you can read the full description, see its priority and status, and take action.</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong style="color: var(--text)">Complete or Delete a Task</strong>
+                    <p>On the Task Detail page, click "Mark as Complete" to update the status, or "Delete Task" to remove it permanently.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Info Panel -->
+        <div>
+          <div class="card">
+            <p class="card-title">Application Info</p>
+            <div class="detail-field">
+              <div class="detail-label">Project</div>
+              <div class="detail-value">TaskFlow</div>
+            </div>
+            <div class="detail-field">
+              <div class="detail-label">Course</div>
+              <div class="detail-value">DevOps Fundamentals</div>
+            </div>
+            <div class="detail-field">
+              <div class="detail-label">Semester</div>
+              <div class="detail-value">Spring 2026</div>
+            </div>
+            <div class="detail-field">
+              <div class="detail-label">University</div>
+              <div class="detail-value">University of Central Punjab</div>
+            </div>
+            <div class="detail-field">
+              <div class="detail-label">Deployment</div>
+              <div class="detail-value">Render (via GitHub Actions)</div>
+            </div>
+            <div class="detail-field">
+              <div class="detail-label">Container</div>
+              <div class="detail-value">Docker + nginx</div>
+            </div>
+          </div>
+
+          <div class="card mt-16">
+            <p class="card-title">Pages</p>
+            <div style="flex-direction: column; gap: 8px; display: flex">
+              <a href="/index.html" class="btn btn-outline btn-sm">🏠 Dashboard</a>
+              <a href="/add-task.html" class="btn btn-outline btn-sm">➕ Add Task</a>
+              <a href="/task-list.html" class="btn btn-outline btn-sm">📋 Task List</a>
+              <a href="/task-detail.html" class="btn btn-outline btn-sm">🔍 Task Detail</a>
+            </div>
+          </div>
+
+          <div class="card mt-16">
+            <p class="card-title">Priority Guide</p>
+            <div style="color: var(--muted); flex-direction: column; gap: 10px; font-size: .85rem; display: flex">
+              <div><span class="badge badge-high" style="margin-right: 8px">High</span>Urgent – complete ASAP</div>
+              <div><span class="badge badge-medium" style="margin-right: 8px">Medium</span>Important but not critical</div>
+              <div><span class="badge badge-low" style="margin-right: 8px">Low</span>Nice to have</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrapper">TaskFlow © 2025 – DevOps Fundamentals, Spring 2026</div>
+  </footer>
+
+
+<script src="/about.cad4fa1f.js"></script></body></html>
